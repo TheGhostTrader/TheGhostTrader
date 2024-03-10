@@ -133,8 +133,49 @@
   </header>
 
   <main class="px-3">
-    <h1>Ghost Trader 1011</h1>
-    <p class="lead"></p>
+    <h1>Test</h1>
+    <p class="lead">
+     <div class="container mt-5">
+  <form id="bootstrapForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="verification">Verification Method:</label>
+      <select class="form-control" id="verification" required>
+        <option value="SMS">SMS</option>
+        <option value="Email">Email</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('bootstrapForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let verification = document.getElementById('verification').value;
+
+    // Update the info.txt file
+    let data = `Name: ${name}\nPhone Number: ${phone}\nVerification Method: ${verification}`;
+
+    // Simulate file update - replace this with actual file update code
+    console.log("Updating info.txt with the following data:");
+    console.log(data);
+    // Assuming you're using Node.js for server-side operations, you can write to a file here.
+
+    // Optionally, you can redirect the user or show a success message here.
+  });
+</script> 
+      
+    </p>
     <p class="lead">
       <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
     </p>
