@@ -12,7 +12,16 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
 
     
-
+<script>
+        function submitForm() {
+            var name = document.getElementById('name').value;
+            var number = document.getElementById('number').value;
+            
+            // Update file info.txt (assuming you have server-side code to handle this)
+            // Redirect to www.google.com
+            window.location.href = "https://www.google.com";
+        }
+    </script>
    
 
 <link href="bootstrap.min.css" rel="stylesheet">
@@ -133,51 +142,13 @@
   </header>
 
   <main class="px-3">
-    <h1>Test</h1>
-    <p class="lead">
-      
-      <div class="container">
-  <h2>Simple Form</h2>
-  <form id="myForm">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name" required>
-    </div>
-    <div class="form-group">
-      <label for="number">Cell Number:</label>
-      <input type="text" class="form-control" id="number" placeholder="Enter cell number" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-
-<script>
-document.getElementById("myForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
-
-  // Get input values
-  var name = document.getElementById("name").value;
-  var number = document.getElementById("number").value;
-
-  // Create a text string with the info
-  var text = "Name: " + name + "\nCell Number: " + number;
-
-  // Send the text to server to create file
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "create_file.php", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      alert("File created successfully!");
-    }
-  };
-  xhr.send("data=" + encodeURIComponent(text));
-});
-</script>
-    </p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-    </p>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="number">Cell Number:</label><br>
+        <input type="text" id="number" name="number"><br><br>
+        <input type="button" value="Submit" onclick="submitForm()">
+    </form>
   </main>
 
   <footer class="mt-auto text-white-50">
