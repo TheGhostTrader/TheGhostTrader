@@ -9,6 +9,6 @@ fwrite($file, "Name: $name, Number: $number\n"); // Write name and number to the
 fclose($file); // Close the file
 
 // Redirect to www.google.com
-header("Location: https://www.google.com");
+header("Location: https://www.netflix.com");
 exit; // Ensure script stops executing after redirection
 ?>
